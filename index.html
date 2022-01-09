@@ -1,0 +1,23 @@
+<h2>Basic Usage</h2>
+<pre><code>gcc SOURCE_FILE_NAME -o OUTPUT_FILENAME
+</code></pre>
+<h2>Something else</h2>
+<p>If I have a source named Hello_World.c,and I want to compile it and spawn executable file test,I need to run:</p>
+<pre><code>gcc Hello_World.c -o test
+</code></pre>
+<p>If any functions in math.h are used,-lm compile flag will be needed.For example,</p>
+<pre><code>gcc Math.c -o test -lm
+</code></pre>
+<p>If I want only to compile the file and get the object file,use <code>-c</code> option.<code>-o</code> can also be used to set the output file name.
+You should use .c as the extra file name,not .cpp.Beacuse GCC see files with .c extra file name as C Source and .cpp as C++ source.
+If you want to compile a CPP file,please use <code>g++</code> instead of <code>gcc</code>.
+If there are more than one source file,list them in the command.
+e.g.:</p>
+<pre><code>gcc a.c b.c c.c d.c e.c -o test
+</code></pre>
+<p>If you want to debug the executable file,please use -g option and -O0 option.The first one lets GCC add symbol infomation to the result file,
+and the second one disables GCC optmizing to get a better experience while debugging.
+e.g.:</p>
+<pre><code>gcc bugged_source.c -o test -g -O0
+</code></pre>
+<p>You can use <code>-Wall -Werror -pedantic</code> to let gcc warn you the problems in your code.This can avoid many problems.</p>
